@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class EchoBot extends TelegramLongPollingBot {
     @Override
@@ -46,8 +47,11 @@ public class EchoBot extends TelegramLongPollingBot {
             resposta = getHora();
         } else if (textoMensagem.startsWith("ola") || textoMensagem.startsWith("olá") || textoMensagem.startsWith("oi")) {
             resposta = "\uD83E\uDD16 Olá, eu sou o bot parabéns, use o comando /help para mais comandos ?";
-        } else if (textoMensagem.startsWith("Nome do Parabenizado")){
-            resposta = textoMensagem + "teste";
+        } else if (textoMensagem.startsWith("nome do parabenizado")){
+             if(textoMensagem.contains("nome do parabenizado"));{
+                 textoMensagem = textoMensagem.replace("nome do parabenizado ", "");
+            }
+            resposta = textoMensagem + " PARABENS";
         } else if (textoMensagem.startsWith("quem é você") || textoMensagem.startsWith("quem e voce")) {
             resposta = "\uD83E\uDD16 Eu sou um bot que deseja parabéns";
         } else if (textoMensagem.startsWith("/help")) {
