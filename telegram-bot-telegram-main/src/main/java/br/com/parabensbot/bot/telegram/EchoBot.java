@@ -38,6 +38,7 @@ public class EchoBot extends TelegramLongPollingBot {
         var chatId = update.getMessage().getChatId().toString();
 
         var resposta = "";
+        String nada=null;
 
         if ("data".equals(textoMensagem)) {
             resposta = getData();
